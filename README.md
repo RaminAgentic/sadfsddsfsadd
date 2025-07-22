@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Ocean Kanban Board
 
 A comprehensive Kanban board application with ocean-themed styling and dynamic board rendering.
@@ -79,3 +80,7 @@ A comprehensive Kanban board application with ocean-themed styling and dynamic b
 - Collaboration features
 
 EOF < /dev/null
+=======
+# sadfsddsfsadd
+sdfdas
+>>>>>>> e6e857c5c21bb4d23887ccabbcee3ce3100f6fce
