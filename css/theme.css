@@ -1,0 +1,159 @@
+/* Ocean Theme Variables and Base Styles */
+
+:root {
+    /* Ocean Color Palette */
+    --ocean-deep: #1e3a8a;
+    --ocean-medium: #3b82f6;
+    --ocean-light: #60a5fa;
+    --ocean-surface: #dbeafe;
+    --ocean-foam: #f0f9ff;
+    
+    /* Complementary Colors */
+    --coral: #f97316;
+    --coral-light: #fdba74;
+    --seaweed: #059669;
+    --seaweed-light: #6ee7b7;
+    
+    /* Neutral Ocean Tones */
+    --sand: #f5f5dc;
+    --pearl: #f8fafc;
+    --shell: #e2e8f0;
+    --storm: #475569;
+    --depth: #0f172a;
+    
+    /* Typography */
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    
+    /* Spacing System */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(30, 58, 138, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(30, 58, 138, 0.1), 0 2px 4px -1px rgba(30, 58, 138, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(30, 58, 138, 0.1), 0 4px 6px -2px rgba(30, 58, 138, 0.05);
+    
+    /* Transitions */
+    --transition-fast: 150ms ease-in-out;
+    --transition-medium: 300ms ease-in-out;
+    --transition-slow: 500ms ease-in-out;
+}
+
+/* Base Theme Application */
+body {
+    font-family: var(--font-family);
+    background: linear-gradient(135deg, var(--ocean-foam) 0%, var(--pearl) 100%);
+    color: var(--depth);
+    font-size: var(--font-size-base);
+}
+
+/* Typography Scale */
+h1 { font-size: var(--font-size-3xl); font-weight: 700; color: var(--ocean-deep); }
+h2 { font-size: var(--font-size-2xl); font-weight: 600; color: var(--ocean-deep); }
+h3 { font-size: var(--font-size-xl); font-weight: 600; color: var(--ocean-medium); }
+h4 { font-size: var(--font-size-lg); font-weight: 500; color: var(--ocean-medium); }
+h5 { font-size: var(--font-size-base); font-weight: 500; color: var(--storm); }
+h6 { font-size: var(--font-size-sm); font-weight: 500; color: var(--storm); }
+
+p { 
+    line-height: 1.6; 
+    color: var(--storm); 
+}
+
+/* Interactive Elements */
+button, .btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--ocean-medium);
+    color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+    background: var(--ocean-deep);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: var(--shell);
+    color: var(--storm);
+    border: 1px solid var(--ocean-light);
+}
+
+.btn-secondary:hover {
+    background: var(--ocean-surface);
+    border-color: var(--ocean-medium);
+}
+
+/* Card-like Components */
+.card {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--shell);
+    transition: all var(--transition-medium);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+/* Input Elements */
+input, textarea, select {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 2px solid var(--shell);
+    border-radius: var(--radius-md);
+    background: white;
+    transition: border-color var(--transition-fast);
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--ocean-medium);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Utility Classes */
+.ocean-gradient {
+    background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-medium) 50%, var(--ocean-light) 100%);
+}
+
+.ocean-text { color: var(--ocean-medium); }
+.coral-text { color: var(--coral); }
+.seaweed-text { color: var(--seaweed); }
+
+.spacing-xs { margin: var(--spacing-xs); }
+.spacing-sm { margin: var(--spacing-sm); }
+.spacing-md { margin: var(--spacing-md); }
+.spacing-lg { margin: var(--spacing-lg); }
+
+.p-xs { padding: var(--spacing-xs); }
+.p-sm { padding: var(--spacing-sm); }
+.p-md { padding: var(--spacing-md); }
+.p-lg { padding: var(--spacing-lg); }
+EOF < /dev/null

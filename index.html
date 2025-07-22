@@ -1,0 +1,81 @@
+<\!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Kanban - Project Management Board</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/components/board.css">
+    <link rel="stylesheet" href="css/components/list.css">
+    <link rel="stylesheet" href="css/components/card.css">
+</head>
+<body>
+    <header class="app-header">
+        <h1 class="app-title">Ocean Kanban</h1>
+        <div class="header-controls">
+            <button class="btn btn-primary" id="new-board-btn">New Board</button>
+            <button class="btn btn-secondary" id="boards-list-btn">All Boards</button>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <div id="board-container" class="board-container">
+            <\!-- Kanban boards will be rendered here -->
+            <div class="board-empty" id="board-empty">
+                <div class="board-empty-icon">🌊</div>
+                <h3 class="board-empty-title">Welcome to Ocean Kanban</h3>
+                <p class="board-empty-description">
+                    Create your first board to start organizing your projects and tasks with our beautiful ocean-themed interface.
+                </p>
+                <button class="btn btn-primary" id="create-first-board">Create Your First Board</button>
+            </div>
+        </div>
+    </main>
+
+    <\!-- Modal for creating new boards -->
+    <div class="modal-backdrop" id="modal-backdrop" style="display: none;"></div>
+    <div class="modal" id="board-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Create New Board</h3>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="board-form">
+                    <div class="form-group">
+                        <label for="board-title-input">Board Title *</label>
+                        <input type="text" id="board-title-input" name="title" required placeholder="Enter board title..." maxlength="50">
+                    </div>
+                    <div class="form-group">
+                        <label for="board-description-input">Description</label>
+                        <textarea id="board-description-input" name="description" rows="3" placeholder="Enter board description..." maxlength="200"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="modal-cancel">Cancel</button>
+                <button type="submit" form="board-form" class="btn btn-primary" id="modal-submit">Create Board</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="app-footer">
+        <p>&copy; 2024 Ocean Kanban. Project Management Made Simple.</p>
+    </footer>
+
+    <\!-- Load data models first -->
+    <script src="js/models/Board.js"></script>
+    <script src="js/models/List.js"></script>
+    <script src="js/models/Card.js"></script>
+    <\!-- Then services -->
+    <script src="js/services/storage.js"></script>
+    <\!-- Then utilities -->
+    <script src="js/utils/helpers.js"></script>
+    <\!-- Finally main application script -->
+    <script src="script.js"></script>
+</body>
+</html>
+EOF < /dev/null

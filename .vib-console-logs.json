@@ -1,0 +1,57 @@
+{
+  "projectId": "proj_1753002343238_bn3z6casc",
+  "logs": [
+    {
+      "id": "log_1753108227221_bwrog0eqy",
+      "timestamp": "2025-07-21T14:30:27.221Z",
+      "level": "success",
+      "title": "Task added",
+      "message": "Added \"xcvsd\" to Sprint 1: Project Foundation & Architecture Setup",
+      "sprintId": "sprint_1753106379007_1"
+    },
+    {
+      "id": "log_1753141735807_l5s8k3h00",
+      "timestamp": "2025-07-21T23:48:55.807Z",
+      "level": "info",
+      "title": "Stop requested",
+      "message": "No active session to stop"
+    },
+    {
+      "id": "log_1753141736778_hntvte5hl",
+      "timestamp": "2025-07-21T23:48:56.778Z",
+      "level": "info",
+      "title": "Stop requested",
+      "message": "No active session to stop"
+    },
+    {
+      "id": "log_1753141818763_vikxnakww",
+      "timestamp": "2025-07-21T23:50:18.763Z",
+      "level": "info",
+      "title": "Stop requested",
+      "message": "No active session to stop"
+    },
+    {
+      "id": "log_1753141819484_w562kj3vu",
+      "timestamp": "2025-07-21T23:50:19.484Z",
+      "level": "info",
+      "title": "Stop requested",
+      "message": "No active session to stop"
+    },
+    {
+      "id": "log_1753177475096_o7nls95a3",
+      "timestamp": "2025-07-22T09:44:35.096Z",
+      "level": "warning",
+      "title": "Session stopped",
+      "message": "Session session_1753177392520_x9i0h8lmq has been stopped from Activity Console",
+      "sessionId": "session_1753177392520_x9i0h8lmq"
+    },
+    {
+      "id": "log_1753177475119_98jxhcw23",
+      "timestamp": "2025-07-22T09:44:35.119Z",
+      "level": "error",
+      "title": "Stop failed",
+      "message": "Error stopping session: No execution state found for project proj_1753002343238_bn3z6casc"
+    }
+  ],
+  "lastUpdated": "2025-07-22T09:44:35.121Z"
+}

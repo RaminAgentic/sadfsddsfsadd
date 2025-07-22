@@ -1,0 +1,218 @@
+/* List Component Styles */
+
+.list {
+  min-width: 280px;
+  max-width: 280px;
+  background: var(--ocean-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-4);
+  border: 1px solid var(--ocean-mist);
+  transition: all var(--transition-normal);
+}
+
+.list:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+}
+
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid var(--ocean-mist);
+}
+
+.list-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--ocean-deep);
+  margin: 0;
+  flex: 1;
+  margin-right: var(--space-2);
+}
+
+.list-count {
+  background: var(--ocean-light);
+  color: var(--ocean-white);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-full);
+  min-width: 20px;
+  text-align: center;
+}
+
+.list-actions {
+  display: flex;
+  gap: var(--space-1);
+  margin-left: var(--space-2);
+}
+
+.list-action-btn {
+  background: none;
+  border: none;
+  color: var(--gray-500);
+  cursor: pointer;
+  padding: var(--space-1);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  font-size: var(--text-sm);
+}
+
+.list-action-btn:hover {
+  color: var(--ocean-primary);
+  background: var(--ocean-mist);
+}
+
+.list-cards {
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.list-cards-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  color: var(--gray-400);
+  font-size: var(--text-sm);
+  text-align: center;
+  border: 2px dashed var(--gray-300);
+  border-radius: var(--radius-md);
+  background: var(--gray-100);
+}
+
+.add-card-container {
+  margin-top: var(--space-2);
+}
+
+.add-card-button {
+  width: 100%;
+  padding: var(--space-2);
+  background: var(--gray-100);
+  border: 1px dashed var(--gray-300);
+  border-radius: var(--radius-md);
+  color: var(--gray-600);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.add-card-button:hover {
+  background: var(--ocean-mist);
+  border-color: var(--ocean-light);
+  color: var(--ocean-deep);
+}
+
+.add-card-form {
+  background: var(--ocean-white);
+  border: 1px solid var(--ocean-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  box-shadow: var(--shadow-sm);
+}
+
+.add-card-textarea {
+  width: 100%;
+  min-height: 60px;
+  padding: var(--space-2);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-family-primary);
+  font-size: var(--text-sm);
+  resize: vertical;
+  margin-bottom: var(--space-2);
+}
+
+.add-card-textarea:focus {
+  outline: none;
+  border-color: var(--ocean-primary);
+  box-shadow: 0 0 0 3px rgba(75, 159, 191, 0.1);
+}
+
+.add-card-actions {
+  display: flex;
+  gap: var(--space-2);
+  justify-content: flex-end;
+}
+
+.list-collapsed .list-cards,
+.list-collapsed .add-card-container {
+  display: none;
+}
+
+.collapse-btn {
+  background: none;
+  border: none;
+  color: var(--gray-500);
+  cursor: pointer;
+  padding: var(--space-1);
+  font-size: var(--text-sm);
+  transition: transform var(--transition-fast);
+}
+
+.list-collapsed .collapse-btn {
+  transform: rotate(-90deg);
+}
+
+/* Drag and Drop States */
+.list-dragging {
+  opacity: 0.5;
+  transform: rotate(3deg);
+}
+
+.list-drag-over {
+  border-color: var(--ocean-primary);
+  background: rgba(75, 159, 191, 0.05);
+}
+
+/* List Animations */
+.list-fade-in {
+  animation: listFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes listFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive List Styles */
+@media (max-width: 768px) {
+  .list {
+    min-width: auto;
+    max-width: none;
+    width: 100%;
+    margin-bottom: var(--space-3);
+  }
+  
+  .list-header {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  
+  .list-title {
+    margin-right: 0;
+    margin-bottom: var(--space-1);
+  }
+  
+  .list-actions {
+    margin-left: auto;
+  }
+}
+EOF < /dev/null

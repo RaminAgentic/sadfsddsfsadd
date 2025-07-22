@@ -1,0 +1,67 @@
+
+<\!DOCTYPE html>
+<html>
+<head>
+    <title>Board Rendering Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-result { margin: 10px 0; padding: 10px; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    </style>
+</head>
+<body>
+    <h1>Board Rendering System Validation</h1>
+    <div id='results'></div>
+    
+    <script>
+        function addResult(message, success = true) {
+            const div = document.createElement('div');
+            div.className = 'test-result ' + (success ? 'success' : 'error');
+            div.textContent = message;
+            document.getElementById('results').appendChild(div);
+        }
+        
+        try {
+            // Test 1: Check if BoardRenderer class exists
+            if (typeof BoardRenderer \!== 'undefined') {
+                addResult('✅ BoardRenderer class is defined');
+            } else {
+                addResult('❌ BoardRenderer class is not defined', false);
+            }
+            
+            // Test 2: Check if sample data method works
+            const renderer = new BoardRenderer();
+            const sampleData = renderer.getSampleData();
+            if (sampleData && sampleData.lists && sampleData.lists.length > 0) {
+                addResult('✅ Sample data generation works');
+                addResult('📊 Board has ' + sampleData.lists.length + ' lists with ' + 
+                         sampleData.lists.reduce((sum, list) => sum + list.cards.length, 0) + ' total cards');
+            } else {
+                addResult('❌ Sample data generation failed', false);
+            }
+            
+            // Test 3: Check HTML generation
+            const cardHTML = renderer.createCardHTML(sampleData.lists[0].cards[0]);
+            if (cardHTML && cardHTML.includes('kanban-card')) {
+                addResult('✅ Card HTML generation works');
+            } else {
+                addResult('❌ Card HTML generation failed', false);
+            }
+            
+            // Test 4: Check DOM elements
+            const listsContainer = document.getElementById('lists-container');
+            if (listsContainer) {
+                addResult('✅ Lists container element found');
+            } else {
+                addResult('❌ Lists container element not found', false);
+            }
+            
+            addResult('🎉 Board rendering system validation complete\!');
+            
+        } catch (error) {
+            addResult('❌ Error during validation: ' + error.message, false);
+        }
+    </script>
+</body>
+</html>
